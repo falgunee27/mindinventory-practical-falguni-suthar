@@ -6,10 +6,5 @@
     "password": "",
     "database": "task-management",
     "entities": ["dist/**/*.entity{.ts,.js}"],
-    "synchronize": false,
-    "migrationsTableName": "migrations",
-    "migrations": ["src/migrations/*.ts"],
-    "cli": {
-        "migrationsDir": "src/migrations"
-    }
+    "synchronize": false
 }
