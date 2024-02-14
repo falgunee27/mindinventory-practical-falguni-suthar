@@ -1,18 +1,19 @@
+import { StatusEnum } from "src/utils/task_status.enum";
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
-export class Users {
+export class UserTasks {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column({nullable: false})
-    username: string;
+    task_title: string;
 
     @Column({nullable: false})
-    email: string;
+    task_description: string;
 
-    @Column({nullable: false})
-    password: string;
+    @Column({type: "enum", enum: StatusEnum, nullable: false})
+    status: StatusEnum;
 
     @CreateDateColumn({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
     created_at: Date;
